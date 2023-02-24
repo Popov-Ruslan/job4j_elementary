@@ -15,6 +15,7 @@ hs_err_pid*
 *.iml
 
 target
+src/main/java/test
 
 out
 *.log
