@@ -2,6 +2,24 @@ package ru.job4j.condition;
 
 public class SqArea {
 
+    /**
+     * returns area of rectangle with known perimeter and coefficient that determines
+     * how many times length of rectangle more than its height.
+     * s - square, l - length, h - height, k - coefficient, p - perimeter
+     * s = l * h
+     * l = h * k
+     * p = 2 * (l + h)
+     * lets find height with the help of an equation
+     * l + h = p / 2,
+     * k * h + h = p / 2,
+     * h * (k + 1) = p / 2,
+     * h = (p / 2) / (k + 1),
+     * h = p / (2k + 2), therefore
+     * s = (p / (2k + 2)) ^ 2 * k
+     * @param p perimeter of rectangle
+     * @param k coefficient
+     * @return {@code double} area of rectangle
+     */
     public static double square(double p, double k) {
         return Math.pow((p / (2 * k + 2)), 2) * k;
     }
