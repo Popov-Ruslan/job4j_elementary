@@ -31,5 +31,6 @@ public class SqArea {
         System.out.println("p = 6, k = 2, s = 2, real = " + result2);
         double result3 = square(30, 4);
         System.out.println("p = 30, k = 4, s = 36, real = " + result3);
+        //check
     }
 }
