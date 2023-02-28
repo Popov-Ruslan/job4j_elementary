@@ -20,5 +20,9 @@ public class Converter {
         float dollar = rubleToDollar(inDol);
         boolean passed2 = expected2 == dollar;
         System.out.println("225 rubles to dollar are 3. Test result: " + passed2);
+        float a = 1.23f;
+        float b = 4.1f;
+        System.out.printf("a = %.15f%n", a);
+        System.out.printf("b = %.15f%n", b);
     }
 }
