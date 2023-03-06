@@ -14,14 +14,16 @@ public class SqArea {
      * <p>k * h + h = p / 2,
      * <p>h * (k + 1) = p / 2,
      * <p>h = (p / 2) / (k + 1),
-     * <p>h = p / (2k + 2), therefore
-     * <p>s = (p / (2k + 2)) ^ 2 * k
+     * <p>h = p / (2k + 2)
      * @param p perimeter of rectangle
      * @param k coefficient
      * @return {@code double} area of rectangle
      */
     public static double square(double p, double k) {
-        return Math.pow((p / (2 * k + 2)), 2) * k;
+        double h = p / (2 * k + 2);
+        double w = k * h;
+        double s = w * h;
+        return s;
     }
 
     public static void main(String[] arguments) {
