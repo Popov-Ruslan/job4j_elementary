@@ -21,4 +21,22 @@ class FindLoopTest {
         int expected = -1;
         assertThat(rst).isEqualTo(expected);
     }
+
+    @Test
+    public void whenNotContainsInRange() {
+        int[] data = {3, 7, 9, 13, 16, 1};
+        int el = 7;
+        int rst = FindLoop.indexInRange(data, el, 2, 5);
+        int expected = -1;
+        assertThat(rst).isEqualTo(expected);
+    }
+
+    @Test
+    public void whenContainsInRange() {
+        int[] data = {3, 7, 9, 13, 16, 1};
+        int el = 13;
+        int rst = FindLoop.indexInRange(data, el, 3, 5);
+        int expected = 3;
+        assertThat(rst).isEqualTo(expected);
+    }
 }
