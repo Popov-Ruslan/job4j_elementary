@@ -5,8 +5,7 @@ public class SortSelected2 {
         int indexOfMin = 0;
         for (int i = 0; i < data.length; i++) {
             int min = data[i];
-            int start = i + 1;
-            for (int j = start; j < data.length; j++) {
+            for (int j = i + 1; j < data.length; j++) {
                 if (data[j] < min) {
                     min = data[j];
                     indexOfMin = j;
@@ -15,7 +14,7 @@ public class SortSelected2 {
             int tmp = data[i];
             data[i] = data[indexOfMin];
             data[indexOfMin] = tmp;
-            indexOfMin = start;
+            indexOfMin = i + 1;
         }
         return data;
     }
