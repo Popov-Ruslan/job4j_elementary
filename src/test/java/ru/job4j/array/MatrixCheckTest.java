@@ -53,4 +53,40 @@ class MatrixCheckTest {
         boolean rst = MatrixCheck.monoVertical(board, column);
         assertThat(rst).isFalse();
     }
+
+    @Test
+    public void whenDiagonalFullX() {
+        char[][] board = {
+                {'X', ' ', ' '},
+                {' ', 'X', ' '},
+                {' ', ' ', 'X'}
+        };
+        char[] rst = MatrixCheck.extractDiagonal(board);
+        char[] expected = {'X', 'X', 'X'};
+        assertThat(rst).containsExactly(expected);
+    }
+
+    @Test
+    public void whenDiagonalFullOne() {
+        char[][] board = {
+                {'1', ' ', ' '},
+                {' ', '1', ' '},
+                {' ', ' ', '1'}
+        };
+        char[] rst = MatrixCheck.extractDiagonal(board);
+        char[] expected = {'1', '1', '1'};
+        assertThat(rst).containsExactly(expected);
+    }
+
+    @Test
+    public void whenDiagonalmix() {
+        char[][] board = {
+                {'X', ' ', ' '},
+                {' ', 'Y', ' '},
+                {' ', ' ', 'Z'}
+        };
+        char[] rst = MatrixCheck.extractDiagonal(board);
+        char[] expected = {'X', 'Y', 'Z'};
+        assertThat(rst).containsExactly(expected);
+    }
 }
