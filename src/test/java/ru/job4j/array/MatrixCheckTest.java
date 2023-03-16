@@ -89,4 +89,60 @@ class MatrixCheckTest {
         char[] expected = {'X', 'Y', 'Z'};
         assertThat(rst).containsExactly(expected);
     }
+
+    @Test
+    public void whenDataVerticalMonoThenTrue() {
+        char[][] input = {
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+
+        };
+        boolean rst = MatrixCheck.isWin(input);
+        assertThat(rst).isTrue();
+    }
+
+    @Test
+    public void whenDataNotMonoThenFalse() {
+        char[][] input = {
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', 'X', ' ', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+
+        };
+        boolean rst = MatrixCheck.isWin(input);
+        assertThat(rst).isFalse();
+    }
+
+    @Test
+    public void whenDataHorizontalMonoThenTrue() {
+        char[][] input = {
+                {' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' '},
+                {'X', 'X', 'X', 'X', 'X'},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+
+        };
+        boolean rst = MatrixCheck.isWin(input);
+        assertThat(rst).isTrue();
+    }
+
+    @Test
+    public void whenDataDiagonalMonoThenFalse() {
+        char[][] input = {
+                {'X', ' ', ' ', ' ', ' '},
+                {' ', 'X', ' ', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', ' ', 'X', ' '},
+                {' ', ' ', ' ', ' ', 'X'},
+
+        };
+        boolean rst = MatrixCheck.isWin(input);
+        assertThat(rst).isFalse();
+    }
 }

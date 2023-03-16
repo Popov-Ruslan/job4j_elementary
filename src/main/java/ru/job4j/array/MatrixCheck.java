@@ -30,4 +30,31 @@ public class MatrixCheck {
         }
         return rst;
     }
+
+    public static boolean isWin(char[][] board) {
+        boolean rst = false;
+        for (int i = 0; i < board.length; i++) {
+            char[] diagValues = extractDiagonal(board);
+            if (diagValues[i] == 'X') {
+                if (monoHorizontal(board, i) || monoVertical(board, i)) {
+                    rst = true;
+                    break;
+                }
+            }
+        }
+        return rst;
+    }
+
+    public static boolean isWin2(char[][] board) {
+        boolean rst = false;
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][i] == 'X') {
+                if (monoHorizontal(board, i) || monoVertical(board, i)) {
+                    rst = true;
+                    break;
+                }
+            }
+        }
+        return rst;
+    }
 }
