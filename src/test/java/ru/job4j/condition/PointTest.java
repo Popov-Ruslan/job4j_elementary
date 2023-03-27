@@ -32,4 +32,13 @@ public class PointTest {
         double expected = 4.4721;
         assertEquals(result, expected, 0.0001f);
     }
+
+    @Test
+    public void when320To037Then7dot681() {
+        Point first = new Point(3, 2, 0);
+        Point second = new Point(0, 3, 7);
+        double rst = first.distance(second);
+        double expected =  7.681;
+        assertEquals(rst, expected, 0.001f);
+    }
 }
